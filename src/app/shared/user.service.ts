@@ -13,11 +13,11 @@ export class UserService {
       return this.http.get<NewuserComponent[]>(this.urlApi).toPromise();
   }
   
-//   addTodo(user:NewuserComponent):Promise<NewuserComponent>{
+  addUser(user):Promise<NewuserComponent>{
       
-//       return this.http.post<NewuserComponent>(this.urlApi, user).toPromise(); 
-//   ;
-//   }
+      return this.http.post<NewuserComponent>(this.urlApi, user).toPromise(); 
+  ;
+  }
   
 //   removeTodo(user:NewuserComponent):Promise<any>{
 //       return this.http.delete(this.urlApi+'/'+user.id).toPromise();

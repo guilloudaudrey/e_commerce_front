@@ -10,8 +10,7 @@ import 'rxjs/add/operator/toPromise';
 })
 
 export class NewuserComponent implements OnInit {
-  nom:string;
-  prenom:string;
+  pseudo:string;
   email:string;
   mdp:string;
 
@@ -24,9 +23,8 @@ export class NewuserComponent implements OnInit {
     this.userService.getAllUsers().then((users) => this.tableau = users);
   }
 
-  // getAllPosts() {
-  //   return this.http.get('localhost/')
-  //     .map(res => res.json());
-  // }
+addUser(pseudo, email, mdp){
+  this.userService.addUser({pseudo:pseudo, email:email, mdp: mdp, dateinscription:new Date}).then((user) => this.tableau.push(user));
+}
 
 }

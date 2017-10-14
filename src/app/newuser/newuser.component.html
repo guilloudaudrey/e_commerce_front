@@ -1,15 +1,13 @@
 <h1>Inscription</h1>
 
 <form>
-    <label for="nom">Nom</label>
-    <input type="text">
-    <label for="prenom">Prénom</label>
-    <input type="text">
+    <label for="pseudo">Pseudo</label>
+    <input type="text" name="pseudo" [(ngModel)]="pseudo">
     <label for="email">Email</label>
-    <input type="text">
+    <input type="text" name="email" [(ngModel)]="email">
     <label for="mdp">Mot de passe</label>
-    <input type="mdp">
-    <button type="submit">Valider</button>
+    <input type="mdp" name="mdp" [(ngModel)]="mdp">
+    <button type="submit" (click)="addUser(pseudo, email, mdp)">Valider</button>
 
 </form>
 
