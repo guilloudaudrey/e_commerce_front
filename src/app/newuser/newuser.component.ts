@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { UserService } from '../shared/user.service';
 import 'rxjs/add/operator/toPromise';
+import * as sha1 from 'js-sha1';
+
 
 @Component({
   selector: 'app-newuser',
@@ -24,7 +26,8 @@ export class NewuserComponent implements OnInit {
   }
 
 addUser(pseudo, email, mdp){
-  this.userService.addUser({pseudo:pseudo, email:email, mdp: mdp, dateinscription:new Date}).then((user) => this.tableau.push(user));
+  this.userService.addUser({pseudo:pseudo, email:email, mdp: sha1(mdp), dateinscription:new Date}).then((user) => this.tableau.push(user));
+console.log
 }
 
 }
