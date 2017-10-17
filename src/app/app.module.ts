@@ -5,11 +5,14 @@ import { AppComponent } from './app.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { AuthenticationService } from './shared/auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewuserComponent
+    NewuserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,8 @@ import {FormsModule} from '@angular/forms';
     FormsModule, 
   ],
   providers: [
-    UserService
+    UserService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
