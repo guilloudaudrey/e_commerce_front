@@ -15,6 +15,7 @@ import { appRoutes } from './app.routes';
 import { BrandService } from './shared/brand.service';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { CatService } from './shared/category.service';
+import { ProductService } from './shared/product.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CatService } from './shared/category.service';
     UserService,
     AuthenticationService,
     BrandService,
-    CatService
+    CatService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
