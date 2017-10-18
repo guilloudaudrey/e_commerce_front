@@ -10,6 +10,12 @@ import { ProductService } from '../shared/product.service';
   styleUrls: ['./newproduct.component.css']
 })
 export class NewproductComponent implements OnInit {
+  ref:string;
+  name:string;
+  description:string;
+  price:number;
+  brandId:number;
+  catId:number;
   listecat = [];
   listebrand = [];
   listeprod = [];
@@ -20,10 +26,11 @@ export class NewproductComponent implements OnInit {
     this.brandService.getAllBrands().subscribe((brands)=>this.listebrand=brands);
     this.catService.getAllCats().subscribe((cats)=>this.listecat=cats);
     this.productService.getAllProducts().subscribe((products)=>this.listeprod=products);
+   
   }
 
-  addProduct(ref, name, description, price, brandId, catId){
-    this.productService.addProduct(new Product(ref, name, description, price, new Date, brandId, catId)).subscribe((product)=>this.listeprod.push(product));
+  addProduct(){
+    this.productService.addProduct(new Product(this.ref, this.name, this.description, this.price, new Date, this.brandId, this.catId)).subscribe((product)=>this.listeprod.push(product));
   }
 
 }
