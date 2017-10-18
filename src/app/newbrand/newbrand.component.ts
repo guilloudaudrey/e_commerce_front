@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BrandService } from '../shared/brand.service';
+import { Brand } from '../shared/Brand';
 
 @Component({
   selector: 'app-newbrand',
@@ -6,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newbrand.component.css']
 })
 export class NewbrandComponent implements OnInit {
-nom:string;
+name:string;
+liste = [];
+brand:Brand;
 
-  constructor() {
+  constructor(private brandService:BrandService) {
 
    }
 
   ngOnInit() {
-
+   
+this.brandService.getAllBrands().subscribe((brands)=>this.liste=brands);
   }
+
+  addBrand(name){
+    this.brandService.addBrand(new Brand(name)).subscribe((brand)=>this.liste.push(brand));
+  }
+
 
 }

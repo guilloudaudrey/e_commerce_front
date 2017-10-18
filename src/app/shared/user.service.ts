@@ -14,9 +14,8 @@ export class UserService {
   }
   
   addUser(user):Promise<NewuserComponent>{
-      
       return this.http.post<NewuserComponent>(this.urlApi, user).toPromise(); 
-  ;
+  
   }
   
 //   removeTodo(user:NewuserComponent):Promise<any>{

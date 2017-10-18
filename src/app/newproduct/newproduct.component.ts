@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newproduct.component.css']
 })
 export class NewproductComponent implements OnInit {
+  listecat = [];
+  listebrand = [];
 
   constructor() { }
 
