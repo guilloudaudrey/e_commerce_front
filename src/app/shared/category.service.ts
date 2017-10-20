@@ -16,4 +16,8 @@ export class CatService {
   addCat(brand):Observable<Category>{
     return this.http.post<Category>(this.urlApi, brand);
   }
+
+  getCatById(id:number):Observable<Category> {
+    return this.http.get<Category>(this.urlApi+'/'+id);
+}
 }

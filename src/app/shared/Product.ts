@@ -1,3 +1,6 @@
+import { Brand } from "./Brand";
+import { Category } from "./Category";
+
 export class Product{
     id?:number;
     ref:string;
@@ -5,16 +8,16 @@ export class Product{
     description: string;
     price:number;
     datecreation:Date;
-    brandId:number;
-    catId:number;
+    brand:Brand;
+    category:Category;
 
     constructor(ref: string, 
         name:string, 
         description: string, 
         price:number, 
         datecreation: Date, 
-        brandId:number, 
-        catId: number, 
+        brand:Brand, 
+        category: Category, 
         id?:number)
         {
         this.ref = ref;
@@ -22,8 +25,8 @@ export class Product{
         this.description = description;
         this.price = price;
         this.datecreation = datecreation;
-        this.brandId = brandId;
-        this.catId = catId;
+        this.brand = brand;
+        this.category = category;
         this.id = id;
     }
 }

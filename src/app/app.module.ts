@@ -16,6 +16,10 @@ import { BrandService } from './shared/brand.service';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { CatService } from './shared/category.service';
 import { ProductService } from './shared/product.service';
+import { Category } from './shared/Category';
+import { ListeUserComponent } from './liste-user/liste-user.component';
+import { ListeProductComponent } from './liste-product/liste-product.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import { ProductService } from './shared/product.service';
     NewproductComponent,
     NewbrandComponent,
     NotfoundComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    ListeUserComponent,
+    ListeProductComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule, 
     RouterModule.forRoot(appRoutes),
+    
   
   ],
   providers: [

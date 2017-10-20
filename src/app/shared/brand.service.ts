@@ -18,4 +18,8 @@ export class BrandService {
     return this.http.post<Brand>(this.urlApi, brand);
   }
 
+  getBrandById(id:number):Observable<Brand> {
+    return this.http.get<Brand>(this.urlApi+'/'+id);
+}
+
 }

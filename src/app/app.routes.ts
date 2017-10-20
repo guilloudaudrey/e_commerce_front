@@ -4,6 +4,8 @@ import { NewuserComponent } from "./newuser/newuser.component";
 import { NewproductComponent } from "./newproduct/newproduct.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { NewCategoryComponent } from "./new-category/new-category.component";
+import { ListeUserComponent } from "./liste-user/liste-user.component";
+import { ListeProductComponent } from "./liste-product/liste-product.component";
 
 
 
@@ -19,6 +21,7 @@ export const appRoutes:Routes = [
     {path: 'newuser', component: NewuserComponent},
     {path: 'newproduct', component: NewproductComponent},
     {path:'newcategory', component: NewCategoryComponent},
+    {path:'products', component:ListeProductComponent},
 
     //On peut faire des redirections sur certaines routes
     // {path: '', pathMatch:'full' , redirectTo: '/chiens'},

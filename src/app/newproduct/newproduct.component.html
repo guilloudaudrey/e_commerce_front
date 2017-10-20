@@ -15,7 +15,9 @@
     </select>
     <label for="category">Catégorie</label>
     <select [(ngModel)]="catId" name="catId">
-      <option *ngFor="let item of listecat; index as clef" value="item.id" >{{item.name}}</option>
+      <option *ngFor="let item of listecat; index as clef" value="{{item.id}}" >{{item.name}}</option>
     </select>
     <button (click)="addProduct()">Ajouter</button>
 </form>
+
+<p></p>

@@ -18,4 +18,8 @@ export class ProductService {
   addProduct(product):Observable<Product>{
     return this.http.post<Product>(this.urlApi, product);
   }
+
+  getProductById(id:number):Observable<Product> {
+      return this.http.get<Product>(this.urlApi+'/'+id);
+}
 }
