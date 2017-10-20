@@ -20,6 +20,7 @@ import { Category } from './shared/Category';
 import { ListeUserComponent } from './liste-user/liste-user.component';
 import { ListeProductComponent } from './liste-product/liste-product.component';
 import { AuthComponent } from './auth/auth.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AuthComponent } from './auth/auth.component';
     ListeUserComponent,
     ListeProductComponent,
     AuthComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,

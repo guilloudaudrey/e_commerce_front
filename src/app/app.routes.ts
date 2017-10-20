@@ -6,6 +6,7 @@ import { NotfoundComponent } from "./notfound/notfound.component";
 import { NewCategoryComponent } from "./new-category/new-category.component";
 import { ListeUserComponent } from "./liste-user/liste-user.component";
 import { ListeProductComponent } from "./liste-product/liste-product.component";
+import { ProductPageComponent } from "./product-page/product-page.component";
 
 
 
@@ -22,6 +23,7 @@ export const appRoutes:Routes = [
     {path: 'newproduct', component: NewproductComponent},
     {path:'newcategory', component: NewCategoryComponent},
     {path:'products', component:ListeProductComponent},
+    {path: 'product/:id', component: ProductPageComponent},
 
     //On peut faire des redirections sur certaines routes
     // {path: '', pathMatch:'full' , redirectTo: '/chiens'},
