@@ -17,5 +17,9 @@ export class ListeProductComponent implements OnInit {
     this.productService.getAllProducts().subscribe((product)=>this.listeproducts = product)
   }
 
+  removeProduct(id:number){
+    this.productService.removeProduct(id).subscribe(() => this.ngOnInit());
+  }
+
 
 }

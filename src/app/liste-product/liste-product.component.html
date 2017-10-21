@@ -1,5 +1,6 @@
 <li *ngFor="let item of listeproducts; index as clef">
 
-    <a [routerLink]="[ '/product', item.id]">{{item.name}} {{item.description}} {{item.price}} €</a>
+    <a [routerLink]="[ '/product', item.id]">{{item.name}}</a>
+    <button (click)="removeProduct(item.id)">Supprimer</button>
 
 </li>
