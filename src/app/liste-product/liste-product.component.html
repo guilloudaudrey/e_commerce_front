@@ -2,5 +2,8 @@
 
     <a [routerLink]="[ '/product', item.id]">{{item.name}}</a>
     <button (click)="removeProduct(item.id)">Supprimer</button>
+    <button (click)="aModifier = item">Modifer</button>
 
 </li>
+
+<app-update-product *ngIf="aModifier" [product]="aModifier" (onSave)="editProd($event)"></app-update-product>

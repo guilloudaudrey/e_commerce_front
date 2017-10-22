@@ -27,4 +27,9 @@ export class ProductService {
   removeProduct(id):Observable<any>{
       return this.http.delete(this.urlApi+'/'+id);
   }
+
+  updateProduct(id:number, product:Product):Observable<Product> {
+    return this.http.patch<Product>(this.urlApi+'/'+id,
+     product);
+}
 }

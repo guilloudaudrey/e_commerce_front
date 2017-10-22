@@ -4,9 +4,7 @@ import { UserService } from './shared/user.service'
 import { AppComponent } from './app.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AuthenticationService } from './shared/auth.service';
-import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewproductComponent } from './newproduct/newproduct.component';
 import { NewbrandComponent } from './newbrand/newbrand.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -19,37 +17,41 @@ import { ProductService } from './shared/product.service';
 import { Category } from './shared/Category';
 import { ListeUserComponent } from './liste-user/liste-user.component';
 import { ListeProductComponent } from './liste-product/liste-product.component';
-import { AuthComponent } from './auth/auth.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NewuserComponent,
-    LoginComponent,
     NewproductComponent,
     NewbrandComponent,
     NotfoundComponent,
     NewCategoryComponent,
     ListeUserComponent,
     ListeProductComponent,
-    AuthComponent,
     ProductPageComponent,
+    UpdateProductComponent,
+  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule, 
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
     
   
   ],
   providers: [
     UserService,
-    AuthenticationService,
     BrandService,
     CatService,
-    ProductService
+    ProductService,
+
+
   ],
   bootstrap: [AppComponent]
 })

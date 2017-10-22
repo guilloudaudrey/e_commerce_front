@@ -22,4 +22,13 @@ export class BrandService {
     return this.http.get<Brand>(this.urlApi+'/'+id);
 }
 
+removeBrand(id:number):Observable<any>{
+  return this.http.delete(this.urlApi+'/'+id);
+}
+
+updateBrand(id:number, brand:Brand):Observable<Brand> {
+  return this.http.patch<Brand>(this.urlApi+'/'+id,
+   brand);
+}
+
 }

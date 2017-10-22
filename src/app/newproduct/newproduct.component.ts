@@ -12,21 +12,27 @@ import { Category } from '../shared/Category';
   styleUrls: ['./newproduct.component.css']
 })
 export class NewproductComponent implements OnInit {
+  fichier:FileList;
+    listebrand = [];
+  listeprod = [];
+
   ref:string;
   name:string;
   description:string;
   price:number;
   brandId:number;
   catId:number;
+  link:string;
   listecat = [];
-  listebrand = [];
-  listeprod = [];
+
   brand:Brand;
   cat:Category;
 
 
+
   constructor(private productService:ProductService, private brandService:BrandService, private catService:CatService) {
 
+    
    }
 
   ngOnInit() {
@@ -37,14 +43,17 @@ export class NewproductComponent implements OnInit {
   }
   
   addProduct(){
+    let reader = new FileReader();
+    reader.onload = (event:ProgressEvent) => 
+      this.link = reader.result;
     this.catService.getCatById(this.catId).subscribe((cat)=>{
     this.cat=cat;
     this.brandService.getBrandById(this.brandId).subscribe((brand)=>{
     this.brand = brand;
-    this.productService.addProduct(new Product(this.ref, this.name, this.description, this.price, new Date, this.brand, this.cat)).subscribe((cat)=>console.log(cat));
+    this.productService.addProduct(new Product(this.ref, this.name, this.description, this.price, new Date, this.link, this.brand, this.cat)).subscribe((cat)=>console.log(cat));
   })
   })
-    
+  reader.readAsDataURL(this.fichier[0]);
   }
-
+  
 }

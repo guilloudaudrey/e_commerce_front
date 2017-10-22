@@ -9,5 +9,6 @@
 
 <li *ngFor="let item of liste; index as clef">
     {{item.name}}
-    <button>Supprimer</button>
+    <button (click)="removeBrand(item.id)">Supprimer</button>
+    <!-- <button (click)="modifier(item)">Modifier</button> -->
 </li>

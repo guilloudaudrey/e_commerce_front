@@ -24,6 +24,12 @@ this.brandService.getAllBrands().subscribe((brands)=>this.liste=brands);
   addBrand(name){
     this.brandService.addBrand(new Brand(name)).subscribe((brand)=>this.liste.push(brand));
   }
+  removeBrand(id:number){
+    this.brandService.removeBrand(id).subscribe(() => this.ngOnInit());
+  }
 
-
+  // modifier(brand:Brand) {
+  //   this.brandService.updateBrand(brand.id,brand)
+  //   .subscribe(() => console.log(brand));
+  // }
 }
