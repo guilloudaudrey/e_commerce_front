@@ -7,6 +7,9 @@ import { NewCategoryComponent } from "./new-category/new-category.component";
 import { ListeUserComponent } from "./liste-user/liste-user.component";
 import { ListeProductComponent } from "./liste-product/liste-product.component";
 import { ProductPageComponent } from "./product-page/product-page.component";
+import { UpdateProductComponent } from "./update-product/update-product.component";
+import { LoginComponent } from "./login/login.component";
+
 
 
 export const appRoutes:Routes = [
@@ -14,8 +17,12 @@ export const appRoutes:Routes = [
     {path: 'newuser', component: NewuserComponent},
     {path: 'newproduct', component: NewproductComponent},
     {path:'newcategory', component: NewCategoryComponent},
-    {path:'products', component:ListeProductComponent},
-    {path: 'product/:id', component: ProductPageComponent},
+    {path:'login', component:LoginComponent},
+    {path:'products', component:ListeProductComponent, 
+    children: [
+        { path: 'edit', component: UpdateProductComponent },
+    ]},
 
+    {path: 'product/:id', component: ProductPageComponent},
     { path: '**', redirectTo: '' }
 ];

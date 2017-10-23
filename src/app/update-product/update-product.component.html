@@ -16,5 +16,4 @@
 <select [(ngModel)]="product.category" name="catId">
   <option *ngFor="let item of listecat; index as clef" value="{{item.id}}" >{{item.name}}</option>
 </select>
-
 <button (click)="save()">Sauvegarder</button>

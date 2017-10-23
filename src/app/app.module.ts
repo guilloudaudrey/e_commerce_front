@@ -19,6 +19,11 @@ import { ListeUserComponent } from './liste-user/liste-user.component';
 import { ListeProductComponent } from './liste-product/liste-product.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './shared/auth.service';
+
+
+
 
 
 
@@ -34,6 +39,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     ListeProductComponent,
     ProductPageComponent,
     UpdateProductComponent,
+    LoginComponent,
+  
   
   ],
   imports: [
@@ -41,7 +48,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     HttpClientModule,
     FormsModule, 
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
     
   
   ],
@@ -50,6 +58,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     BrandService,
     CatService,
     ProductService,
+    AuthService
+
 
 
   ],
