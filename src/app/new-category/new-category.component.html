@@ -7,5 +7,5 @@
 
 <li *ngFor="let item of liste; index as clef">
     {{item.name}}
-    <button>Supprimer</button>
+    <button (click)="removeCat(item.id)">Supprimer</button>
 </li>

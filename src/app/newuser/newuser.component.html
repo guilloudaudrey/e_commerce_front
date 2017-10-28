@@ -1,18 +1,28 @@
 <h1>Inscription</h1>
+<mat-card>
+    <form [formGroup]="formulaire" style="margin-bottom:100px">
+        <p>
+            <mat-form-field>
+                <input type="text" name="pseudo" formControlName="pseudo" matInput placeholder="pseudo">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input type="text" name="email" formControlName="email" matInput placeholder="email">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input type="password" name="mdp" formControlName="mdp" matInput placeholder="mot de passe">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input type="password" name="confirm" formControlName="confirm" matInput placeholder="confirmation du mot de passe">
+            </mat-form-field>
+        </p>
 
-<form>
-    <label for="pseudo">Pseudo</label>
-    <input type="text" name="pseudo" [(ngModel)]="pseudo">
-    <label for="email">Email</label>
-    <input type="text" name="email" [(ngModel)]="email">
-    <label for="mdp">Mot de passe</label>
-    <input type="mdp" name="mdp" [(ngModel)]="mdp">
-    <button type="submit" (click)="addUser(pseudo, email, mdp)">Valider</button>
+        <button mat-raised-button type="submit" (click)="addUser()">valider</button>
 
-</form>
-
-<li *ngFor="let item of tableau; index as clef">
-
-    {{item.email}} {{item.pseudo}}
-    <button>Supprimer</button>
-</li>
+    </form>
+</mat-card>

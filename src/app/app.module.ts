@@ -21,9 +21,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './shared/auth.service';
-
-
-
+import { HeaderComponent } from './header/header.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule, MatInputModule, MatButtonModule, MatCard} from '@angular/material';
 
 
 
@@ -40,6 +40,7 @@ import { AuthService } from './shared/auth.service';
     ProductPageComponent,
     UpdateProductComponent,
     LoginComponent,
+    HeaderComponent,
   
   
   ],
@@ -49,6 +50,11 @@ import { AuthService } from './shared/auth.service';
     FormsModule, 
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    
 
     
   

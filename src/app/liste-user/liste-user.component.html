@@ -1,3 +1,4 @@
-<p>
-    liste-user works!
-</p>
+<li *ngFor="let item of listeUsers">
+    {{item.pseudo}}
+    <button (click)="removeUser(item.id)">supprimer</button>
+</li>

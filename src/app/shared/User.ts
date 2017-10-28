@@ -4,6 +4,7 @@ export class User{
     email:string;
     mdp: string;
     datInscription: Date;
+    token:string;
 
     constructor(pseudo:string, email:string, mdp:string, dateInscription:Date, id?:number){
         this.pseudo = pseudo;

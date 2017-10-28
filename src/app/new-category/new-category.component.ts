@@ -21,4 +21,8 @@ export class NewCategoryComponent implements OnInit {
     this.catService.addCat(new Category(name)).subscribe((cat)=>this.liste.push(cat));
   }
 
+  removeCat(id:number){
+    this.catService.removeCat(id).subscribe(() => this.catService.getAllCats().subscribe((product)=>this.liste = product));
+  }
+
 }

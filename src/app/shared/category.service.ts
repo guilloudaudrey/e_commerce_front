@@ -20,4 +20,9 @@ export class CatService {
   getCatById(id:number):Observable<Category> {
     return this.http.get<Category>(this.urlApi+'/'+id);
 }
+
+  removeCat(id):Observable<any>{
+    return this.http.delete(this.urlApi+'/'+id);
+  }
+
 }

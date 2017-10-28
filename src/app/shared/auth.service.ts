@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -20,14 +19,13 @@ export class AuthService {
 
   login(username:string,pass:string):Observable<boolean> {
     
-    return this.http.get<User[]>(this.urlAPI+'?username='+username+'&password='+pass)
+    return this.http.get(this.urlAPI+'/authenticate')
     .map((users) => {
-      if(users.length === 1) {
+   
         localStorage.setItem('user', JSON.stringify(users[0]));
         this.user.next(users[0]);
         return true;
-      }
-      return false;
+
     });
   }
 
@@ -35,5 +33,22 @@ export class AuthService {
     localStorage.removeItem('user');
     this.user.next(null);
   }
+
+  // getByPseudo(pseudo:string):Observable<User[]> {
+  //   return this.http.get<User[]>(this.urlAPI+'/'+pseudo);
+  // }
+
+  // getByToken(token:string):Observable<User> {
+  //   return this.http.get<User[]>(this.urlAPI+'?token='+token)
+  //   .map((users) => {
+  //     if(users.length === 1) {
+  //       return users[0];
+  //     }
+  //     return null
+  //   });
+    
+  // }
+
+
 
 }

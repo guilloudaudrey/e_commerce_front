@@ -18,6 +18,7 @@ export const appRoutes:Routes = [
     {path: 'newproduct', component: NewproductComponent},
     {path:'newcategory', component: NewCategoryComponent},
     {path:'login', component:LoginComponent},
+    {path:'users', component:ListeUserComponent},
     {path:'products', component:ListeProductComponent, 
     children: [
         { path: 'edit', component: UpdateProductComponent },

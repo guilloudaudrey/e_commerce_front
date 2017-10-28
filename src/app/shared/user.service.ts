@@ -13,13 +13,31 @@ export class UserService {
 
   constructor(private http:HttpClient){}
   
-  getAllUsers():Promise<NewuserComponent[]>{
-      return this.http.get<NewuserComponent[]>(this.urlApi).toPromise();
+  getAllUsers():Observable<NewuserComponent[]>{
+      return this.http.get<NewuserComponent[]>(this.urlApi);
   }
   
-  addUser(user):Promise<NewuserComponent>{
-      return this.http.post<NewuserComponent>(this.urlApi, user).toPromise(); 
-  
+  addUser(user):Observable<NewuserComponent>{
+      return this.http.post<NewuserComponent>(this.urlApi, user); 
+  }
+
+  getUserById(id:number):Observable<User> {
+    return this.http.get<User>(this.urlApi+'/'+id);
+  }
+
+  removeUser(id):Observable<any>{
+      return this.http.delete(this.urlApi+'/'+id);
+  }
+
+  updateUser(id:number, user:User):Observable<User> {
+    return this.http.patch<User>(this.urlApi+'/'+id,
+    user);
+  }
+
+  //a revoir
+
+  signup(user:User): Observable<User> {
+    return this.http.post<User>(this.urlApi, user);
   }
   
   login(username:string,pass:string):Observable<boolean> {
