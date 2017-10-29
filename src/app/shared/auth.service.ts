@@ -13,19 +13,20 @@ export class AuthService {
   urlAPI:string = 'http://localhost:3000/user';
 
   constructor(private http:HttpClient) { 
-    this.user.next(JSON.parse(localStorage.getItem('user')));
+    // this.user.next(JSON.parse(localStorage.getItem('user')));
   }
 
 
-  login(username:string,pass:string):Observable<boolean> {
+  login(user):Observable<boolean> {
     
-    return this.http.get(this.urlAPI+'/authenticate')
+    return this.http.post<User[]>(this.urlAPI+'/authenticate', user)
     .map((users) => {
-   
+      if(users) {
         localStorage.setItem('user', JSON.stringify(users[0]));
         this.user.next(users[0]);
         return true;
-
+      }
+      return false;
     });
   }
 

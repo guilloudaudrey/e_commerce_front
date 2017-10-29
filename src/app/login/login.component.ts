@@ -7,8 +7,8 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string;
-  password:string;
+  pseudo:string;
+  mdp:string;
   connected:boolean = false;
 
   constructor(private auth:AuthService) { }
@@ -17,9 +17,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.username, this.password);
-    this.auth.login(this.username, this.password)
-    .subscribe(logged => this.connected = logged);
+    this.auth.login({pseudo:this.pseudo})
+    .subscribe((user)=>this.connected = user);
   }
 
   logout() {
