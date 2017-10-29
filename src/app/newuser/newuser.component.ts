@@ -32,13 +32,15 @@ export class NewuserComponent implements OnInit {
       mdp:['',[Validators.required]],
       confirm:'',
     })
+    console.log(localStorage);
   }
 
 addUser(){
   this.userService.addUser(new User(
       this.formulaire.value.pseudo, 
       this.formulaire.value.email, 
-      this.formulaire.value.mdp, new Date()))
+      this.formulaire.value.mdp, 
+      new Date))
       .subscribe((user) => this.listeUsers.push(user));
    
 

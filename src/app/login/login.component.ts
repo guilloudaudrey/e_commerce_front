@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
+import { User } from '../shared/User';
+
 
 @Component({
   selector: 'app-login',
@@ -10,15 +12,24 @@ export class LoginComponent implements OnInit {
   pseudo:string;
   mdp:string;
   connected:boolean = false;
+  user:User;
 
-  constructor(private auth:AuthService) { }
+
+  constructor(private auth:AuthService) {
+    if (localStorage.length !== 0){
+      this.connected = true
+    }
+    this.auth.user.subscribe((user) => this.user = user)
+   }
 
   ngOnInit() {
+
   }
 
   login() {
     this.auth.login({pseudo:this.pseudo})
-    .subscribe((user)=>this.connected = user);
+    .subscribe(logged => this.connected = logged);
+  
   }
 
   logout() {

@@ -8,22 +8,26 @@ import { User } from './User';
 
 @Injectable()
 export class AuthService {
-
   user:BehaviorSubject<User> = new BehaviorSubject(null);
   urlAPI:string = 'http://localhost:3000/user';
 
+  ngOnInit():void{
+    
+   }
+
   constructor(private http:HttpClient) { 
-    // this.user.next(JSON.parse(localStorage.getItem('user')));
+    this.user.next(JSON.parse(localStorage.getItem('user')));
   }
 
 
-  login(user):Observable<boolean> {
+  login(pseudo):Observable<boolean> {
     
-    return this.http.post<User[]>(this.urlAPI+'/authenticate', user)
-    .map((users) => {
-      if(users) {
-        localStorage.setItem('user', JSON.stringify(users[0]));
-        this.user.next(users[0]);
+    return this.http.post<User>(this.urlAPI+'/authenticate', pseudo)
+    .map((user) => {
+      if(user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.user.next(user);
+        console.log(localStorage)
         return true;
       }
       return false;
