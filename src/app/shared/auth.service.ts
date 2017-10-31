@@ -10,14 +10,26 @@ import { User } from './User';
 export class AuthService {
   user:BehaviorSubject<User> = new BehaviorSubject(null);
   urlAPI:string = 'http://localhost:3000/user';
+  token:string;
 
-  ngOnInit():void{
-    
-   }
 
   constructor(private http:HttpClient) { 
-    this.user.next(JSON.parse(localStorage.getItem('user')));
+  this.init()
+  //this.user.next(JSON.parse(localStorage.getItem('token')));
   }
+
+
+  init() {
+    console.log(localStorage)
+    this.token = localStorage.getItem('token');
+    if(this.token) {
+        this.getByToken(this.token).subscribe((user) =>{
+          this.user.next(user);
+        });
+    } 
+  }
+
+ 
 
 
   login(pseudo):Observable<boolean> {
@@ -25,7 +37,7 @@ export class AuthService {
     return this.http.post<User>(this.urlAPI+'/authenticate', pseudo)
     .map((user) => {
       if(user) {
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('token', user.token);
         this.user.next(user);
         console.log(localStorage)
         return true;
@@ -35,7 +47,8 @@ export class AuthService {
   }
 
   logout():void {
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+
     this.user.next(null);
   }
 
@@ -43,16 +56,16 @@ export class AuthService {
   //   return this.http.get<User[]>(this.urlAPI+'/'+pseudo);
   // }
 
-  // getByToken(token:string):Observable<User> {
-  //   return this.http.get<User[]>(this.urlAPI+'?token='+token)
-  //   .map((users) => {
-  //     if(users.length === 1) {
-  //       return users[0];
-  //     }
-  //     return null
-  //   });
+  getByToken(token:string):Observable<User> {
+    return this.http.post<User>(this.urlAPI+'/token',{token:token})
+    .map((users) => {
+      if(users) {
+        return users;
+      }
+      return null
+    });
     
-  // }
+  }
 
 
 

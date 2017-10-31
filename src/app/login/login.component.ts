@@ -16,10 +16,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private auth:AuthService) {
-    if (localStorage.length !== 0){
-      this.connected = true
-    }
     this.auth.user.subscribe((user) => this.user = user)
+  
    }
 
   ngOnInit() {

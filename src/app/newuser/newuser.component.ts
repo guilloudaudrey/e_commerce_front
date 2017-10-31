@@ -32,7 +32,7 @@ export class NewuserComponent implements OnInit {
       mdp:['',[Validators.required]],
       confirm:'',
     })
-    console.log(localStorage);
+ //   console.log(localStorage);
   }
 
 addUser(){

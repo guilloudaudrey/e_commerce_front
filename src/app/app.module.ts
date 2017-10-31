@@ -24,7 +24,7 @@ import { AuthService } from './shared/auth.service';
 import { HeaderComponent } from './header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatInputModule, MatButtonModule, MatCard} from '@angular/material';
-
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -54,6 +54,7 @@ import {MatFormFieldModule, MatInputModule, MatButtonModule, MatCard} from '@ang
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    JwtModule
     
 
     
