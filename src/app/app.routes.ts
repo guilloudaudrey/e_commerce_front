@@ -19,10 +19,8 @@ export const appRoutes:Routes = [
     {path:'newcategory', component: NewCategoryComponent},
     {path:'login', component:LoginComponent},
     {path:'users', component:ListeUserComponent},
-    {path:'products', component:ListeProductComponent, 
-    children: [
-        { path: 'edit', component: UpdateProductComponent },
-    ]},
+    {path:'products', component:ListeProductComponent},
+    {path:'', component:ListeProductComponent},
 
     {path: 'product/:id', component: ProductPageComponent},
     { path: '**', redirectTo: '' }
