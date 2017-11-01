@@ -1,9 +1,19 @@
-<li *ngFor="let item of listeproducts; index as clef">
+<main>
+    <section *ngFor="let item of listeproducts; index as clef">
+        <a [routerLink]="[ '/product', item.id]">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="item.link" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">{{item.name}}</h4>
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                </div>
+            </div>
 
-    <a [routerLink]="[ '/product', item.id]">{{item.name}}</a>
-    <button (click)="removeProduct(item.id)">Supprimer</button>
-    <button (click)="aModifier = item">Modifer</button>
+        </a>
 
-</li>
+
+    </section>
+</main>
 
 <app-update-product *ngIf="aModifier" [product]="aModifier" (onSave)="editProd($event)"></app-update-product>

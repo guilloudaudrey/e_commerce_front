@@ -34,10 +34,17 @@
                     <a *ngIf="!user" routerLink="/login">LogIn/SignIn</a>
                 </li>
             </ul>
+
+
+
             <ul class="nav navbar-nav pull-right">
-                <li *ngIf="user" style="color:white; margin-top:8px" class="pull-right">
-                    Salut {{user.pseudo}}
+
+                <li *ngIf="user" style="color:white; margin-top:8px">
+                    Salut {{user.pseudo}} !
                     <button (click)="logout()" class="btn btn-primary">logout</button>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white; margin-top:15px; margin-left:10px; font-size:1.2em"></span>
                 </li>
             </ul>
 
