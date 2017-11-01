@@ -17,16 +17,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth:AuthService) {
     this.auth.user.subscribe((user) => this.user = user)
-  
    }
 
   ngOnInit() {
-
+    console.log(this.user)
   }
 
   login() {
     this.auth.login({pseudo:this.pseudo})
     .subscribe(logged => this.connected = logged);
+    
+  
   
   }
 

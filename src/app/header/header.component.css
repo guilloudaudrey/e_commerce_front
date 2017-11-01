@@ -1,0 +1,13 @@
+nav {
+    margin-bottom: 200px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: rgb(247, 2, 96) !important;
+    border: rgb(247, 2, 96) !important;
+}
+
+.navbar-header .navbar-inverse .navbar-fixed-top {}

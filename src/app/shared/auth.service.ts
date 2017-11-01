@@ -18,7 +18,6 @@ export class AuthService {
   //this.user.next(JSON.parse(localStorage.getItem('token')));
   }
 
-
   init() {
     console.log(localStorage)
     this.token = localStorage.getItem('token');
@@ -28,9 +27,6 @@ export class AuthService {
         });
     } 
   }
-
- 
-
 
   login(pseudo):Observable<boolean> {
     

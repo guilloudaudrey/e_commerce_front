@@ -25,6 +25,7 @@ import { HeaderComponent } from './header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatInputModule, MatButtonModule, MatCard} from '@angular/material';
 import { JwtModule } from '@auth0/angular-jwt';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -54,10 +55,9 @@ import { JwtModule } from '@auth0/angular-jwt';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    JwtModule
-    
-
-    
+    JwtModule,
+    NgbModule
+  
   
   ],
   providers: [
