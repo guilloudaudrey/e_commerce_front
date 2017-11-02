@@ -28,11 +28,7 @@ export class NewproductComponent implements OnInit {
   brand:Brand;
   cat:Category;
 
-
-
-  constructor(private productService:ProductService, private brandService:BrandService, private catService:CatService) {
-
-    
+  constructor(private productService:ProductService, private brandService:BrandService, private catService:CatService) {  
    }
 
   ngOnInit() {
@@ -56,5 +52,8 @@ export class NewproductComponent implements OnInit {
   reader.readAsDataURL(this.fichier[0]);
   }
   
+  addBasket(){
+    
+  }
   
 }

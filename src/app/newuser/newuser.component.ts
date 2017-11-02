@@ -6,7 +6,8 @@ import * as sha1 from 'js-sha1';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../shared/User';
 import { validatePassword } from '../shared/validators';
-import { AuthService } from '../shared/auth.service';
+import { Basket } from '../shared/Basket';
+import { PanierService } from '../shared/panier.service';
 
 
 @Component({
@@ -17,10 +18,11 @@ import { AuthService } from '../shared/auth.service';
 
 export class NewuserComponent implements OnInit {
   formulaire:FormGroup;
-
   listeUsers = [];
+  user:User;
 
-  constructor(private userService:UserService, private fb:FormBuilder, private authService:AuthService) {   
+  constructor(private userService:UserService, private fb:FormBuilder, private panierService:PanierService) {
+   
   }
 
   ngOnInit() { 
@@ -35,18 +37,22 @@ export class NewuserComponent implements OnInit {
  //   console.log(localStorage);
   }
 
-addUser(){
-  this.userService.addUser(new User(
+  
+  addUser(){
+    this.userService.addUser(new User(
       this.formulaire.value.pseudo, 
       this.formulaire.value.email, 
       this.formulaire.value.mdp, 
       new Date))
-      .subscribe((user) => this.listeUsers.push(user));
-   
+      .subscribe((user) => 
+      
+        this.panierService.addBasket(new Basket(user)).subscribe()
+      );      
+    }
 
-}
 
-removeUser(id:number){
+    
+    removeUser(id:number){
   this.userService.removeUser(id).subscribe(() => this.userService.getAllUsers().subscribe((user)=>this.listeUsers = user));
 }
 

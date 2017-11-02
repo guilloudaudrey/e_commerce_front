@@ -17,8 +17,8 @@ export class UserService {
       return this.http.get<NewuserComponent[]>(this.urlApi);
   }
   
-  addUser(user):Observable<NewuserComponent>{
-      return this.http.post<NewuserComponent>(this.urlApi, user); 
+  addUser(user):Observable<User>{
+      return this.http.post<User>(this.urlApi, user); 
   }
 
   getUserById(id:number):Observable<User> {

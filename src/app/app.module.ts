@@ -26,6 +26,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatInputModule, MatButtonModule, MatCard} from '@angular/material';
 import { JwtModule } from '@auth0/angular-jwt';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PanierService } from './shared/panier.service';
+import { BasketComponent } from './basket/basket.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminService } from './shared/admin.service';
+
+
 
 
 @NgModule({
@@ -42,6 +48,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UpdateProductComponent,
     LoginComponent,
     HeaderComponent,
+    BasketComponent,
+    AdminComponent,
   
   
   ],
@@ -56,7 +64,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatButtonModule,
     JwtModule,
-    NgbModule
+    NgbModule,
+    
   
   
   ],
@@ -65,9 +74,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrandService,
     CatService,
     ProductService,
-    AuthService
-
-
+    AuthService,
+    PanierService,
+    AdminService
 
   ],
   bootstrap: [AppComponent]

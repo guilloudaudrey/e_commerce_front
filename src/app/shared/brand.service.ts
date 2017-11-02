@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NewbrandComponent } from '../newbrand/newbrand.component';
 import { Observable } from 'rxjs/Observable';
 import { Brand } from './Brand'
 

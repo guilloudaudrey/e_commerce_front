@@ -1,8 +1,12 @@
 export class Admin {
     id?: string;
-    username: string;
+    pseudo: string;
     password: string;
-    firstName: string;
-    lastName: string;
-    token:string;
+    // firstName: string;
+    // lastName: string;
+    // token:string;
+
+    constructor(id?:number){
+
+    }
 }

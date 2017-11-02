@@ -9,6 +9,8 @@ import { ListeProductComponent } from "./liste-product/liste-product.component";
 import { ProductPageComponent } from "./product-page/product-page.component";
 import { UpdateProductComponent } from "./update-product/update-product.component";
 import { LoginComponent } from "./login/login.component";
+import { BasketComponent } from "./basket/basket.component";
+import { AdminComponent } from "./admin/admin.component";
 
 
 
@@ -21,7 +23,8 @@ export const appRoutes:Routes = [
     {path:'users', component:ListeUserComponent},
     {path:'products', component:ListeProductComponent},
     {path:'', component:ListeProductComponent},
-
+    {path:'basket', component:BasketComponent},
     {path: 'product/:id', component: ProductPageComponent},
+    {path:'admin', component:AdminComponent},
     { path: '**', redirectTo: '' }
 ];
