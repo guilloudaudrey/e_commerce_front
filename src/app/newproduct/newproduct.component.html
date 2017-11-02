@@ -1,17 +1,21 @@
 <h1>Nouvel article</h1>
 
 <form>
-    <label for="ref">Référence</label>
-    <input type="text" [(ngModel)]="ref" name="ref">
+    <mat-form-field>
+        <input type="text" [(ngModel)]="ref" name="ref" matInput placeholder="Référence">
+    </mat-form-field>
 
-    <label for="name">Nom</label>
-    <input type="text" [(ngModel)]="name" name="name">
+    <mat-form-field>
+        <input type="text" [(ngModel)]="name" name="name" matInput placeholder="Nom">
+    </mat-form-field>
 
-    <label for="description">Description</label>
-    <textarea name="description" id="" cols="30" rows="10" [(ngModel)]="description" name="description"></textarea>
+    <mat-form-field>
+        <textarea name="description" id="" cols="30" rows="10" [(ngModel)]="description" name="description" matInput placeholder="Description"></textarea>
+    </mat-form-field>
 
-    <label for="price">Prix</label>
-    <input type="number" [(ngModel)]="price" name="price">
+    <mat-form-field>
+        <input type="number" [(ngModel)]="price" name="price" matInput placeholder="Prix">
+    </mat-form-field>
 
     <label for="visuel">Visuel</label>
     <input type="file" #file (change)="fichier = file.files">
@@ -25,6 +29,28 @@
     <select [(ngModel)]="catId" name="catId">
       <option *ngFor="let item of listecat; index as clef" value="{{item.id}}" >{{item.name}}</option>
     </select>
+
+    <label for="style">Style</label>
+    <select>
+        <option>Ethnique</option>
+        <option>Industriel</option>
+        <option>Vintage</option>
+        <option>Scandinave</option>
+        <option>Design</option>
+        <option>Classique</option>
+        <option>Art Déco</option>
+    </select>
+    <label for="couleur">Couleur</label>
+    <select id="colorselector">
+            <option value="rouge">rouge</option>
+            <option value="47" data-color="#CD5C5C" selected="selected">indianred</option>
+            <option value="87" data-color="#FF4500">orangered</option>
+            ...
+            <option value="15" data-color="#DC143C">crimson</option>
+            <option value="24" data-color="#FF8C00">darkorange</option>
+            <option value="78" data-color="#C71585">mediumvioletred</option>
+        </select>
+
 
     <button (click)="addProduct()">Ajouter</button>
 </form>
