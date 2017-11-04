@@ -1,28 +1,30 @@
-<h1>Inscription</h1>
-<mat-card>
-    <form [formGroup]="formulaire" style="margin-bottom:100px">
-        <p>
-            <mat-form-field>
-                <input type="text" name="pseudo" formControlName="pseudo" matInput placeholder="pseudo">
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field>
-                <input type="text" name="email" formControlName="email" matInput placeholder="email">
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field>
-                <input type="password" name="mdp" formControlName="mdp" matInput placeholder="mot de passe">
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field>
-                <input type="password" name="confirm" formControlName="confirm" matInput placeholder="confirmation du mot de passe">
-            </mat-form-field>
-        </p>
+<section *ngIf="!user">
+    <h1>Inscription</h1>
+    <mat-card>
+        <form [formGroup]="formulaire" style="margin-bottom:100px">
+            <p>
+                <mat-form-field>
+                    <input type="text" name="pseudo" formControlName="pseudo" matInput placeholder="pseudo">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="text" name="email" formControlName="email" matInput placeholder="email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" name="mdp" formControlName="mdp" matInput placeholder="mot de passe">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" name="confirm" formControlName="confirm" matInput placeholder="confirmation du mot de passe">
+                </mat-form-field>
+            </p>
 
-        <button mat-raised-button type="submit" (click)="addUser()">valider</button>
+            <button mat-raised-button type="submit" (click)="addUser()">valider</button>
 
-    </form>
-</mat-card>
+        </form>
+    </mat-card>
+</section>

@@ -35,8 +35,6 @@ export class NewuserComponent implements OnInit {
       mdp:['',[Validators.required]],
       confirm:'',
     })
-
- 
   }
 
   
