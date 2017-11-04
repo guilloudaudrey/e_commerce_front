@@ -28,12 +28,12 @@ export class AuthService {
     } 
   }
 
-  login(pseudo):Observable<boolean> {
+  login():Observable<boolean> {
     
-    return this.http.post<User>(this.urlAPI+'/authenticate', pseudo)
+    return this.http.get(this.urlAPI+'/authenticate')
     .map((user) => {
       if(user) {
-        localStorage.setItem('token', user.token);
+        localStorage.setItem('token', user);
         this.user.next(user);
         console.log(localStorage)
         return true;
@@ -53,7 +53,7 @@ export class AuthService {
   // }
 
   getByToken(token:string):Observable<User> {
-    return this.http.post<User>(this.urlAPI+'/token',{token:token})
+    return this.http.get(this.urlAPI+'/token',{token:token})
     .map((users) => {
       if(users) {
         return users;
