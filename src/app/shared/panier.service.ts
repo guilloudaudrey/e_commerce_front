@@ -26,4 +26,20 @@ export class PanierService {
     getBasketById(id:number):Observable<Basket>{
       return this.http.get<Basket>(this.urlApi+'/'+id)
     }
-  }
+
+    // getBasketbyUserToken(user):Observable<Basket>{
+    //   return this.http.post<User>(this.urlApi+'/user', {user.token:user})
+
+    // }
+
+    // getByToken(token:string):Observable<User> {
+    //   return this.http.post<User>(this.urlAPI+'/token',{token:token})
+    //   .map((users) => {
+    //     if(users) {
+    //       return users;
+    //     }
+    //     return null
+    //   });
+      
+    }
+  

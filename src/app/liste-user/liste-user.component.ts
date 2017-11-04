@@ -18,7 +18,7 @@ export class ListeUserComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getAllUsers().subscribe((users)=>this.listeUsers = users)
-    console.log(this.user)
+    console.log(this.listeUsers)
   }
 
  removeUser(id:number){

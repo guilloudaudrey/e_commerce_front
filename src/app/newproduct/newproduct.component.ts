@@ -54,7 +54,8 @@ export class NewproductComponent implements OnInit {
   })
   reader.readAsDataURL(this.fichier[0]);
   }
-
+  
+  addBasket(){
     
   }
   

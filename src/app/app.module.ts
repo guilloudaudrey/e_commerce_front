@@ -30,6 +30,7 @@ import { PanierService } from './shared/panier.service';
 import { BasketComponent } from './basket/basket.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminService } from './shared/admin.service';
+import { LignePanierService } from './shared/lignepanier.service';
 
 
 
@@ -76,7 +77,8 @@ import { AdminService } from './shared/admin.service';
     ProductService,
     AuthService,
     PanierService,
-    AdminService
+    AdminService,
+    LignePanierService
 
   ],
   bootstrap: [AppComponent]
