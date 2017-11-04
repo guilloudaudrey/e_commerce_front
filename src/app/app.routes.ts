@@ -26,5 +26,6 @@ export const appRoutes:Routes = [
     {path:'basket', component:BasketComponent},
     {path: 'product/:id', component: ProductPageComponent},
     {path:'admin', component:AdminComponent},
+    {path:'login', component:LoginComponent},
     { path: '**', redirectTo: '' }
 ];

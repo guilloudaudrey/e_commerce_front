@@ -12,6 +12,8 @@ export class Product{
     link:string;
     brand:Brand;
     category:Category;
+    style:string;
+    couleur:string;
 
     constructor(ref: string, 
         name:string, 
@@ -21,6 +23,8 @@ export class Product{
         link:string,
         brand:Brand, 
         category: Category, 
+        style:string,
+        couleur:string,
         id?:number)
         {
         this.ref = ref;
@@ -32,5 +36,7 @@ export class Product{
         this.brand = brand;
         this.category = category;
         this.id = id;
+        this.couleur = couleur;
+        this.style = style;
     }
 }

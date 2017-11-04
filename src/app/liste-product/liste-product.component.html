@@ -3,7 +3,7 @@
         <section *ngFor="let item of listeproducts; index as clef">
             <div class="card col-lg-5" style="height:600px; width:250px">
                 <a [routerLink]="[ '/product', item.id]">
-                    <img class="card-img-top" [src]="item.link" alt="Card image cap" style="height:250px; width:250px">
+                    <img class="card-img-top" [src]="item.link" alt="Card image cap" style="height:250px; width:250px; ">
                 </a>
                 <div class=" card-block ">
                     <h4 class="card-title ">{{item.name}}</h4>

@@ -13,3 +13,13 @@ h1 {
 mat-form-field {
     width: 100%;
 }
+
+button {
+    width: 30%;
+    margin: auto;
+}
+
+#colorselector {
+    margin-bottom: 20px;
+    width: 50%;
+}

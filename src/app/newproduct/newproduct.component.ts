@@ -27,6 +27,9 @@ export class NewproductComponent implements OnInit {
 
   brand:Brand;
   cat:Category;
+  style:string;
+  couleur:string;
+
 
   constructor(private productService:ProductService, private brandService:BrandService, private catService:CatService) {  
    }
@@ -46,13 +49,12 @@ export class NewproductComponent implements OnInit {
     this.cat=cat;
     this.brandService.getBrandById(this.brandId).subscribe((brand)=>{
     this.brand = brand;
-    this.productService.addProduct(new Product(this.ref, this.name, this.description, this.price, new Date, this.link, this.brand, this.cat)).subscribe((cat)=>console.log(cat));
+    this.productService.addProduct(new Product(this.ref, this.name, this.description, this.price, new Date, this.link, this.brand, this.cat, this.style, this.couleur)).subscribe((cat)=>console.log(cat));
   })
   })
   reader.readAsDataURL(this.fichier[0]);
   }
-  
-  addBasket(){
+
     
   }
   

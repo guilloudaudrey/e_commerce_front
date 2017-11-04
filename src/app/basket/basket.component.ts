@@ -18,11 +18,8 @@ export class BasketComponent implements OnInit {
    }
 
   ngOnInit() {
- 
+ this.panierService.getBasketById(this.user.id)
   }
 
-  addBasket(){
-    this.panierService.addBasket(new Basket(this.user)).subscribe();
-    console.log(this.user);
-  }
+
 }

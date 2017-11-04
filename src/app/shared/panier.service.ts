@@ -22,4 +22,8 @@ export class PanierService {
       // console.log('this', this);
       return this.http.post<Basket>(this.urlApi, basket);
     }
+
+    getBasketById(id:number):Observable<Basket>{
+      return this.http.get<Basket>(this.urlApi+'/'+id)
+    }
   }

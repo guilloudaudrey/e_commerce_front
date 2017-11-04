@@ -31,35 +31,43 @@
     </select>
 
     <label for="style">Style</label>
-    <select>
-        <option>Ethnique</option>
-        <option>Industriel</option>
-        <option>Vintage</option>
-        <option>Scandinave</option>
-        <option>Design</option>
-        <option>Classique</option>
-        <option>Art Déco</option>
+    <select [(ngModel)]="style" id="styleselector" name="style">
+        <option value="ethnique">Ethnique</option>
+        <option value="industriel">Industriel</option>
+        <option value="vintage">Vintage</option>
+        <option value="scandinave">Scandinave</option>
+        <option value="design">Design</option>
+        <option value="classique">Classique</option>
+        <option value="artdeco">Art Déco</option>
     </select>
+
     <label for="couleur">Couleur</label>
-    <select id="colorselector">
-            <option value="rouge">rouge</option>
-            <option value="47" data-color="#CD5C5C" selected="selected">indianred</option>
-            <option value="87" data-color="#FF4500">orangered</option>
-            ...
-            <option value="15" data-color="#DC143C">crimson</option>
-            <option value="24" data-color="#FF8C00">darkorange</option>
-            <option value="78" data-color="#C71585">mediumvioletred</option>
-        </select>
+    <select [(ngModel)]="couleur" id="colorselector" name="couleur">
+        <option value="rouge">rouge</option>
+        <option value="vert" selected="selected">vert</option>
+        <option value="bleu">bleu</option>
+        <option value="jaune">jaune</option>
+        <option value="orange">orange</option>
+        <option value="noir">noir</option>
+        <option value="blanc">blanc</option>
+        <option value="violet">violet</option>
+        <option value="marron">marron</option>
+        <option value="beige">beige</option>
+        <option value="gris">gris</option>
+        <option value="beige">beige</option>
+        <option value="rose">rose</option>
+        <option value="doré">doré</option>
+        <option value="argenté">argenté</option>
+    </select>
 
 
-    <button (click)="addProduct()">Ajouter</button>
+
+    <button mat-raised-button (click)="addProduct()">Ajouter</button>
 </form>
 
-<ul>
+<!-- <ul>
     <li *ngFor="let product of listeprod">
         {{product.name}}
         <img [src]="product.link">
-
-
     </li>
-</ul>
+</ul> -->
