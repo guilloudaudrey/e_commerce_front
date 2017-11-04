@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { LignePanier } from './Lignepanier';
+import { Basket } from './Basket';
 
 
 @Injectable()
@@ -30,5 +31,10 @@ export class LignePanierService {
   updateLignePanier(id:number, lignepanier:LignePanier):Observable<LignePanier> {
     return this.http.patch<LignePanier>(this.urlApi+'/'+id,
      lignepanier);
+}
+
+getLignePanierByBasket(basket:number):Observable<LignePanier[]>{
+  return this.http.post<LignePanier[]>(this.urlApi+'/basket', {basketId:basket}, )
+
 }
 }

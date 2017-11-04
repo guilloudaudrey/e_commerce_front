@@ -20,6 +20,7 @@ export class ListeProductComponent implements OnInit {
   user:User;
   basket:Basket;
 
+
   constructor(private panierService:PanierService, private productService:ProductService, private lignepanierService:LignePanierService) { 
 
   }

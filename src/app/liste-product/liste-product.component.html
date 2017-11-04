@@ -9,36 +9,39 @@
                     <h4 class="card-title ">{{item.name}}</h4>
                     <p class="card-text ">{{item.description}}</p>
                     <p class="card-text ">{{item.price}} €</p>
-                    <a href="# " type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</a>
+                    <!-- <a href="# " type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</a> -->
                     <button (click)="removeProduct(item.id)">X</button>
-                </div>
-            </div>
-
-
-
-
-
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                        </div>
-                        <div class="modal-body">
-                            <p>Ajouter au panier.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="addLignePanier(item.id)">Ok</button>
-                        </div>
-                    </div>
-
+                    <button (click)="addLignePanier(item.id)">+</button>
                 </div>
             </div>
         </section>
     </main>
 </div>
+
+
+
+
+<div id="myModal" class="modal fade" role="dialog" *ngFor="let item of listeproducts; index as clef">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <p>Ajouter au panier.</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button> {{item.id}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <app-update-product *ngIf="aModifier " [product]="aModifier " (onSave)="editProd($event) "></app-update-product>

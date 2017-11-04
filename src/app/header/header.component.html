@@ -23,7 +23,7 @@
                         <li><a routerLink="/newcategory" routerLinkActive="active">New category</a></li>
                         <li><a routerLink="/products" routerLinkActive="active">Products list</a></li>
                         <li><a routerLink="/users" routerLinkActive="active">Users list</a></li>
-                        <li><a routerLink="/basket" routerLinkActive="active">Basket</a></li>
+
                         <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
                     </ul>
                 </li>
@@ -49,7 +49,7 @@
                     <button (click)="logout()" class="btn btn-primary">logout</button>
                 </li>
                 <li>
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white; margin-top:15px; margin-left:10px; font-size:1.2em"></span>
+                    <a routerLink="/basket"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white; margin-left:10px; font-size:1.2em"></span></a>
                 </li>
             </ul>
 
