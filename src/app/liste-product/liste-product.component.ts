@@ -5,6 +5,7 @@ import { LignePanierService } from '../shared/lignepanier.service';
 import { LignePanier } from '../shared/Lignepanier';
 import { User } from '../shared/User';
 import { Basket } from '../shared/Basket';
+import { PanierService } from '../shared/panier.service';
 
 
 @Component({
@@ -19,10 +20,13 @@ export class ListeProductComponent implements OnInit {
   user:User;
   basket:Basket;
 
-  constructor(private productService:ProductService, private lignepanierService:LignePanierService) { }
+  constructor(private panierService:PanierService, private productService:ProductService, private lignepanierService:LignePanierService) { 
+
+  }
 
   ngOnInit() {
     this.productService.getAllProducts().subscribe((product)=>this.listeproducts = product)
+
   }
 
   removeProduct(id:number){
@@ -34,8 +38,18 @@ export class ListeProductComponent implements OnInit {
     .subscribe(() => console.log(product));
   }
 
-  addLignePanier(){
+
+
+  addLignePanier(id:number){
 // this.lignepanierService.addLignePanier(new LignePanier())
+this.panierService.getBasketByToken(localStorage.token).subscribe((panier)=>{
+this.basket = panier;
+this.productService.getProductById(id).subscribe((product)=>{this.product = product;
+  this.lignepanierService.addLignePanier(new LignePanier(this.basket, this.product))
+  .subscribe((lignepanier)=>console.log(lignepanier))
+})
+})
+
   }
 
 

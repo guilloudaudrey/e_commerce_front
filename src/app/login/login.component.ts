@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   mdp:string;
   connected:boolean = false;
   user:User;
-s
+
   constructor(private auth:AuthService) {
     this.auth.user.subscribe((user) => this.user = user)
    }

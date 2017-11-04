@@ -44,10 +44,10 @@ export class NewuserComponent implements OnInit {
       this.formulaire.value.email, 
       this.formulaire.value.mdp, 
       new Date))
-      .subscribe((user) => 
+      .subscribe((user) => {localStorage.setItem('token', user.token);
       
         this.panierService.addBasket(new Basket(user, localStorage.token)).subscribe()
-      );      
+      });      
     }
 
 
