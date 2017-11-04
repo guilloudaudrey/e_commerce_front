@@ -44,7 +44,9 @@ export class NewuserComponent implements OnInit {
       this.formulaire.value.email, 
       this.formulaire.value.mdp, 
       new Date))
-      .subscribe(
+      .subscribe((user) => 
+      
+        this.panierService.addBasket(new Basket(user)).subscribe()
       );      
     }
 
