@@ -28,7 +28,7 @@
                     <p class="card-text ">{{product?.description}}</p>
                 </div>
             </div>
-            <button mat-raised-button>Ajouter au panier</button>
+            <button mat-raised-button (click)="addLignePanier(product.id)">Ajouter au panier</button>
         </div>
     </div>
 </div>

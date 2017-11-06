@@ -1,7 +1,7 @@
 <main>
     <h1>Mon panier</h1>
     <section *ngFor="let ligne of basket?.lignesProduit; index as clef">
-        <p>{{ligne?.product?.name}}</p>
+        <p>{{ligne?.product?.name}}<a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></p>
     </section>
     <button (click)="lister()">liste</button>
 </main>

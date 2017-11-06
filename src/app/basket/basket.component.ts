@@ -5,6 +5,8 @@ import { User } from '../shared/User';
 import { Basket } from '../shared/Basket';
 import { LignePanierService } from '../shared/lignepanier.service';
 import { ProductService } from '../shared/product.service';
+import { LignePanier } from '../shared/Lignepanier';
+import { Product } from '../shared/Product';
 
 @Component({
   selector: 'app-basket',
@@ -15,8 +17,9 @@ export class BasketComponent implements OnInit {
   user:User
   basket:Basket;
   liste=[];
+  product:Product;
 
-  constructor(private productService:ProductService, private panierService:PanierService, private auth:AuthService, private lignePanier:LignePanierService) {
+  constructor(private lignepanierService:LignePanierService, private productService:ProductService, private panierService:PanierService, private auth:AuthService, private lignePanier:LignePanierService) {
     
    }
 
@@ -30,11 +33,26 @@ export class BasketComponent implements OnInit {
 
     })
   })
-  //this.productService.getAllProducts().subscribe((baskets)=>this.liste.push(baskets))
+
   }
 
   lister(){
     console.log(this.liste)
   }
-}
 
+  addLignePanier(id:number){
+    // this.lignepanierService.addLignePanier(new LignePanier())
+    this.panierService.getBasketByToken(localStorage.token).subscribe((panier)=>{
+    this.basket = panier;
+    this.productService.getProductById(id).subscribe((product)=>{this.product = product;
+      this.lignepanierService.addLignePanier(new LignePanier(this.product.price, this.basket, this.product))
+      .subscribe((lignepanier)=>console.log(lignepanier))
+    })
+    })
+
+      }
+
+      removeLignePanier(id:number){
+        this.lignepanierService.removeLignePanier(id)
+      }
+}
