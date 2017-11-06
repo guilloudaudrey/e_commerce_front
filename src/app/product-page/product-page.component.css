@@ -8,3 +8,8 @@ section {
     display: flex;
     justify-content: center;
 }
+
+.mat-raised-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

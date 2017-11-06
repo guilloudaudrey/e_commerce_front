@@ -33,8 +33,6 @@ import { AdminService } from './shared/admin.service';
 import { LignePanierService } from './shared/lignepanier.service';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,8 +49,6 @@ import { LignePanierService } from './shared/lignepanier.service';
     HeaderComponent,
     BasketComponent,
     AdminComponent,
-  
-  
   ],
   imports: [
     BrowserModule,
@@ -66,9 +62,6 @@ import { LignePanierService } from './shared/lignepanier.service';
     MatButtonModule,
     JwtModule,
     NgbModule,
-    
-  
-  
   ],
   providers: [
     UserService,
@@ -79,7 +72,6 @@ import { LignePanierService } from './shared/lignepanier.service';
     PanierService,
     AdminService,
     LignePanierService
-
   ],
   bootstrap: [AppComponent]
 })

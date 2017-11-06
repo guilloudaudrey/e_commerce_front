@@ -6,7 +6,6 @@ export class LignePanier{
     basket:Basket;
     product:Product;
 
-
     constructor(basket:Basket, product:Product, id?:number){
      this.basket = basket;
      this.product = product;

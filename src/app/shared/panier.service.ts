@@ -31,6 +31,7 @@ export class PanierService {
       return this.http.post<Basket>(this.urlApi+'/token', {token:token}, )
 
     }
+
       
     }
   

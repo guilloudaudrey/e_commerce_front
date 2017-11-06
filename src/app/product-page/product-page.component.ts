@@ -11,7 +11,10 @@ import { Product } from '../shared/Product';
 export class ProductPageComponent implements OnInit {
   product:Product;
 
-  constructor(private route:ActivatedRoute, private productService:ProductService) { }
+
+  constructor(private route:ActivatedRoute, private productService:ProductService) {
+
+   }
 
   ngOnInit() {
     this.route.params

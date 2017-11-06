@@ -1,7 +1,34 @@
 <section>
     <p *ngIf="product">
         {{product?.name}} {{product?.brand}}
-        <img [src]="product.link">
         <button>Ajouter au panier</button>
     </p>
 </section>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="my-4">Recherche</h1>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Category 1</a>
+                <a href="#" class="list-group-item">Category 2</a>
+                <a href="#" class="list-group-item">Category 3</a>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+
+            <div class="card mt-4">
+                <img class="card-img-top img-fluid" style="height: 500px" [src]="product?.link">
+                <div class="card-body ">
+                    <span class="badge badge-default">{{product?.name}}</span>
+                    <h3 class="card-title ">{{product?.name}}</h3>
+                    <h4>{{product?.price}} €</h4>
+                    <p class="card-text ">{{product?.description}}</p>
+                </div>
+            </div>
+            <button mat-raised-button>Ajouter au panier</button>
+        </div>
+    </div>
+</div>

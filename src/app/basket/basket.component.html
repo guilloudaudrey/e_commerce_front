@@ -1,1 +1,7 @@
-<h1>Mon panier</h1>
+<main>
+    <h1>Mon panier</h1>
+    <section *ngFor="let ligne of basket?.lignesProduit; index as clef">
+        <p>{{ligne?.product?.name}}</p>
+    </section>
+    <button (click)="lister()">liste</button>
+</main>
