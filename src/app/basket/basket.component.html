@@ -16,7 +16,7 @@
 
             <tbody *ngFor="let ligne of basket?.lignesProduit; index as clef">
                 <tr>
-                    <th scope="row">index</th>
+                    <th scope="row"><img [src]="ligne.product.link"></th>
                     <td>{{ligne?.product?.name}}</td>
                     <td>{{ligne?.product?.price}}</td>
                     <td>1</td>
