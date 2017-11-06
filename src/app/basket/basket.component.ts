@@ -27,7 +27,6 @@ export class BasketComponent implements OnInit {
     this.auth.user.subscribe((user) => this.user = user)
  this.panierService.getBasketByToken(localStorage.token).subscribe(panier=>{
   this.basket = panier;
-  console.log(this.basket.id)
  this.lignePanier.getLignePanierByBasket(this.basket.id).subscribe(ligne=>{
    this.basket.lignesProduit = ligne;
 
@@ -53,6 +52,9 @@ export class BasketComponent implements OnInit {
       }
 
       removeLignePanier(id:number){
-        this.lignepanierService.removeLignePanier(id)
+        this.lignepanierService.removeLignePanier(id).subscribe(()=> this.lignePanier.getLignePanierByBasket(this.basket.id).subscribe(ligne=>{
+          this.basket.lignesProduit = ligne;
+        })
+      )
       }
 }

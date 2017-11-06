@@ -1,7 +1,30 @@
 <main>
-    <h1>Mon panier</h1>
-    <section *ngFor="let ligne of basket?.lignesProduit; index as clef">
-        <p>{{ligne?.product?.name}}<a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></p>
-    </section>
-    <button (click)="lister()">liste</button>
+    <div class="container">
+        <h1>Mon panier</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+
+
+
+            <tbody *ngFor="let ligne of basket?.lignesProduit; index as clef">
+                <tr>
+                    <th scope="row">index</th>
+                    <td>{{ligne?.product?.name}}</td>
+                    <td>{{ligne?.product?.price}}</td>
+                    <td>1</td>
+                    <td><span class="glyphicon glyphicon-trash" aria-hidden="due" (click)="removeLignePanier(ligne.id)"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
 </main>
