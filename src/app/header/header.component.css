@@ -6,4 +6,8 @@
     border: rgb(247, 2, 96) !important;
 }
 
-.navbar-header .navbar-inverse .navbar-fixed-top {}
+.accueil {
+    color: rgb(75, 211, 221) !important;
+    font-weight: bold;
+}
+

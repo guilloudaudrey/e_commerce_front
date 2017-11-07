@@ -13,3 +13,12 @@ section {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+}
+
+.recherche-bloc {
+    margin-top: 50px;
+}

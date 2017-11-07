@@ -40,7 +40,7 @@ export class ProductPageComponent implements OnInit {
     this.panierService.getBasketByToken(localStorage.token).subscribe((panier)=>{
     this.basket = panier;
     this.productService.getProductById(id).subscribe((product)=>{this.product = product;
-      this.lignepanierService.addLignePanier(new LignePanier(this.basket, this.product))
+      this.lignepanierService.addLignePanier(new LignePanier(this.product.price, this.basket, this.product))
       .subscribe((lignepanier)=>console.log(lignepanier))
     })
     })

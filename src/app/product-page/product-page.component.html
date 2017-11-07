@@ -9,8 +9,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <h1 class="my-4">Recherche</h1>
-            <div class="list-group">
+
+            <div class="list-group recherche-bloc">
                 <a href="#" class="list-group-item">Category 1</a>
                 <a href="#" class="list-group-item">Category 2</a>
                 <a href="#" class="list-group-item">Category 3</a>
@@ -28,6 +28,7 @@
                     <p class="card-text ">{{product?.description}}</p>
                 </div>
             </div>
+
             <button mat-raised-button (click)="addLignePanier(product.id)">Ajouter au panier</button>
         </div>
     </div>
