@@ -10,6 +10,8 @@ h1 {
     text-align: center;
 }
 
+.blocsecondaire {}
+
 #myCarousel {
     height: 400px;
 }
@@ -25,4 +27,17 @@ h1 {
 
 .name {
     height: 50px;
+}
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mat-checkbox-layout {
+    font-weight: normal;
+}
+
+.categories {
+    text-align: left;
 }

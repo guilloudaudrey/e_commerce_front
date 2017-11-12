@@ -76,7 +76,7 @@
                     <button (click)="logout()" class="btn btn-primary">logout</button>
                 </li>
                 <li>
-                    <a [routerLink]="['/basket']"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white; margin-left:10px; font-size:1.2em"></span></a>
+                    <a *ngIf="user" [routerLink]="['/basket']"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white; margin-left:10px; font-size:1.2em"></span></a>
                 </li>
             </ul>
         </div>
